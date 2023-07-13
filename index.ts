@@ -1,4 +1,4 @@
-import express, { Application } from "express"
+import express, { Application, Request, Response } from "express"
 import  mainApp  from "./mainApp"
 import db from "./config/dataBase"
 import dotenv from "dotenv"
@@ -10,6 +10,12 @@ const port : number = real
 const app: Application = express()
 
 mainApp(app)
+
+app.get("/",(req, res) => {
+    return res.send({
+        message: "ready for deployment"
+    })
+})
 
 const server = app.listen(process.env.PORT || port, ()=>{
     console.log("");
