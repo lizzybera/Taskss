@@ -4,7 +4,7 @@ dotenv.config()
 
 const URL: string = process.env.APPLICATION_STRINGS!
 
-const db = (()=>{
+export const db = (()=>{
     mongoose.connect(URL).then(()=>{
         console.log("connected");
         

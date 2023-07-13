@@ -8,7 +8,7 @@ interface iStudent{
 
 interface iSchoolStudent extends iStudent, mongoose.Document {}
 
-const studentModel = new Schema({
+const studentModel = new mongoose.Schema({
             name : {
                 type : String,
                 require: true
